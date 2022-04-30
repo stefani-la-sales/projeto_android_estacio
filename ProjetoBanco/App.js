@@ -57,7 +57,14 @@ const App = () => {
                       </TouchableOpacity>
                     ),
                   })} />
-                  <Stack.Screen name="Details" component={DetailsScreen} />
+                  <Stack.Screen name="Details" component={DetailsScreen} options={({ navigation }) => ({
+                    title: `Detalhes`,
+                    headerRight: () => (
+                      <TouchableOpacity onPress={signOut}> 
+                        <Text>Sair</Text>
+                      </TouchableOpacity>
+                    ),
+                  })}/>
                 </>
               )
           }
